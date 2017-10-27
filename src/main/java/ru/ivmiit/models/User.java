@@ -3,6 +3,7 @@ package ru.ivmiit.models;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name= "student")
@@ -20,4 +21,7 @@ public class User {
     private Long id;
     private String name;
     private int age;
+
+    @OneToMany(mappedBy = "owner")
+    private List<Auto> autos;
 }

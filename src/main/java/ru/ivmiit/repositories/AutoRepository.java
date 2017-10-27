@@ -4,6 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import ru.ivmiit.models.Auto;
 import ru.ivmiit.models.User;
 
-public interface AutoRepository extends JpaRepository<Auto, Long> {
+import java.util.List;
 
+public interface AutoRepository extends JpaRepository<Auto, Long> {
+    List<Auto> findAllByColor(String color);
 }
